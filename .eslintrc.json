@@ -38,6 +38,7 @@
   "react-hooks/rules-of-hooks": "error",
   "react-hooks/exhaustive-deps": "warn",
   "no-console": "off",
+  "no-underscore-dangle": "off",
   "no-restricted-imports": [
     "error",
     {
@@ -57,8 +58,13 @@
         {
           "name": "node:util",
           "message": "Используй 'util' вместо 'node:util'."
+        },
+        {
+          "name": "node:assert",
+          "message": "Использование node:assert запрещено."
         }
-      ]
+      ],
+      "patterns": ["node:*"]
     }
   ]
 },
@@ -71,26 +77,7 @@
           "extensions": [".js", ".jsx"]
         }
       }
-    },
-    "no-restricted-imports": [
-  "error",
-  {
-    "paths": [
-      {
-        "name": "node:crypto",
-        "message": "Использование node:crypto запрещено. Используй вместо этого полифил или browser-friendly модуль."
-      },
-      {
-        "name": "node:stream",
-        "message": "Использование node:stream запрещено."
-      },
-      {
-        "name": "node:assert",
-        "message": "Использование node:assert запрещено."
-      }
-    ],
-    "patterns": ["node:*"]
-  }
-]
+    }
+    
   }
   

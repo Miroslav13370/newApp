@@ -1,8 +1,8 @@
 const webpack = require("webpack");
 
-module.exports = function override(config) {
-  config.resolve.fallback = {
-    ...config.resolve.fallback,
+module.exports = function override(originalConfig) {
+  const fallback = {
+    ...originalConfig.resolve?.fallback,
     assert: require.resolve("assert"),
     buffer: require.resolve("buffer/"),
     crypto: require.resolve("crypto-browserify"),
@@ -16,13 +16,20 @@ module.exports = function override(config) {
     url: require.resolve("url/"),
   };
 
-  config.plugins = [
-    ...config.plugins,
+  const plugins = [
+    ...(originalConfig.plugins || []),
     new webpack.ProvidePlugin({
       Buffer: ["buffer", "Buffer"],
       process: "process/browser",
     }),
   ];
 
-  return config;
+  return {
+    ...originalConfig,
+    resolve: {
+      ...originalConfig.resolve,
+      fallback,
+    },
+    plugins,
+  };
 };
