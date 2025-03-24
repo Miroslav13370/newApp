@@ -23,8 +23,7 @@
     "semver": "^7.7.1",
     "tar": "^7.4.3",
     "undici": "^7.5.0",
-    "web-vitals": "^2.1.4",
-    "webpack": "^5.98.0"
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-app-rewired start",
@@ -59,7 +58,6 @@
     "@babel/preset-react": "^7.26.3",
     "@eslint/js": "^9.22.0",
     "assert": "^2.1.0",
-    "browserify-zlib": "^0.2.0",
     "buffer": "^6.0.3",
     "crypto-browserify": "^3.12.1",
     "eslint": "^8.57.1",
@@ -71,16 +69,12 @@
     "eslint-plugin-prettier": "^5.2.3",
     "eslint-plugin-react": "^7.37.4",
     "globals": "^16.0.0",
-    "https-browserify": "^1.0.0",
     "husky": "^8.0.0",
     "lint-staged": "^15.5.0",
-    "os-browserify": "^0.3.0",
     "prettier": "^3.5.3",
     "process": "^0.11.10",
     "react-app-rewired": "^2.2.1",
     "stream-browserify": "^3.0.0",
-    "stream-http": "^3.2.0",
-    "url": "^0.11.4",
     "util": "^0.12.5",
     "vercel": "^41.4.1"
   },
